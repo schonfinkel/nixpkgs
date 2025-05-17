@@ -101,10 +101,6 @@ postgresqlBuildExtension (finalAttrs: {
 
   passthru.tests.extension = postgresqlTestExtension {
     inherit (finalAttrs) finalPackage;
-    withPackages = [
-      "plpython3"
-      "omnigres"
-    ];
     sql = ''
       -- https://docs.omnigres.org/omni_id/identity_type/#usage
       CREATE EXTENSION omni_id;
