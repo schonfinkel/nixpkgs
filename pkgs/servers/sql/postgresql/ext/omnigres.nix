@@ -56,27 +56,9 @@ postgresqlBuildExtension (finalAttrs: {
   ];
 
   buildInputs = postgresql.buildInputs ++ [
-    bison
-    boost
     brotli
     bzip2
-    clang_18
-    doxygen
-    flex
-    git
     libcap
-    libuv
-    libxml2
-    lld
-    netcat
-    openssl
-    perl
-    pgWithExtensions
-    python3
-    python3Packages.build
-    readline
-    sqlite
-    zlib
   ];
 
   cmakeFlags = [
