@@ -43,15 +43,16 @@ postgresqlBuildExtension (finalAttrs: {
     hash = "sha256-jOlHXl7ANhMwOPizd5KH+wYZmBNNkkIa9jbXZR8Xu28=";
   };
 
+  strictDeps = true;
+
   nativeBuildInputs = [
     clang_18
     cmake
     flex
-    libtool
+    netcat
     pkg-config
     perl
     python3
-    python3Packages.build
   ];
 
   buildInputs = postgresql.buildInputs ++ [
