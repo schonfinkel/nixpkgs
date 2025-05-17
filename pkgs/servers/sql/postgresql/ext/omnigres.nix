@@ -96,7 +96,6 @@ postgresqlBuildExtension (finalAttrs: {
   enableParallelBuilding = true;
   doCheck = false;
 
-  # https://github.com/omnigres/omnigres?tab=readme-ov-file#building--using-extensions
   preInstall = ''
     patchShebangs script_omni*
     mkdir -p $out/lib/
