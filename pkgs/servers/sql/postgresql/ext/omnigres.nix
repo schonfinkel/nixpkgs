@@ -79,18 +79,12 @@ postgresqlBuildExtension (finalAttrs: {
   ];
 
   cmakeFlags = [
-    "-DNETCAT=${netcat}/bin/nc"
     "-DOPENSSL_CONFIGURED=1"
-    "-DCMAKE_C_COMPILER=${clang_18}/bin/clang"
-    "-DCMAKE_CXX_COMPILER=${clang_18}/bin/clang++"
     "-DPG_CONFIG=${pgWithExtensions.pg_config}/bin/pg_config"
     "-DPostgreSQL_EXTENSION_DIR=${lib.getDev pgWithExtensions}/share/postgresql/extension/"
     "-DPostgreSQL_PACKAGE_LIBRARY_DIR=${lib.getDev pgWithExtensions}/lib/"
     "-DPostgreSQL_TARGET_PACKAGE_LIBRARY_DIR=${builtins.placeholder "out"}/lib/"
     "-DPostgreSQL_TARGET_EXTENSION_DIR=${builtins.placeholder "out"}/share/postgresql/extension/"
-    "-DPython3_EXECUTABLE=${python3}/bin/python3"
-    "-DPython_EXECUTABLE=${python3}/bin/python3"
-    "-DDOXYGEN_EXECUTABLE=${doxygen}/bin/doxygen"
   ];
 
   enableParallelBuilding = true;
